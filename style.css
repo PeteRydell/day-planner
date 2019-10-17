@@ -1,16 +1,29 @@
-#heading{
+.jumbotron{
     text-align: center;
     border-bottom: solid;
     padding-bottom: 30px;
     border-width: 5px;
 }
 
-#title{
-    padding-top: 30px;
-};
+.container-1{
+    text-align: center;
+    align-content: center;
+}
 
-#subHead{
-    padding-bottom: 40px;
+.inputs{
+    justify-content: center;
+}
+.hour-input{
+    border-left: solid;
+    border-width: 2px;
+    border-color: gray;
+    width: 100%;
+    height: 30px;
+}
+
+.mainbody{
+    box-align: center;
+    justify-content: center;
 }
 
 .mainBody{
@@ -19,10 +32,3 @@
     align-content: center;
 }
 
-.hour-input{
-    border-left: solid;
-    border-width: 2px;
-    border-color: gray;
-    width: 100%;
-    height: 30px;
-}
