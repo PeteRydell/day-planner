@@ -1,10 +1,13 @@
+//Displays current day in jumbotron
 $("#currentDay").text(moment().format('LLLL'));
 
+//Establishes variables for time format
 var time = 'HH:mm:ss'
 var past = setInterval(past, 1000);
 var current = setInterval(current, 1000);
 var future = setInterval(future, 1000);
 
+//Gets description elements from html
 var nineAM = JSON.parse(localStorage.getItem('#descriptionNine'));
 $("#descriptionNine").val(nineAM);
 var tenAM = JSON.parse(localStorage.getItem('#descriptionTen'));
@@ -24,6 +27,7 @@ $("#descriptionFour").val(fourPM);
 var fivePM = JSON.parse(localStorage.getItem('#descriptionFive'));
 $("#descriptionFive").val(fivePM);
 
+//Sets value of description elements on save button click and saves to local storage
 $("#saveBtnNine").click(function() { 
     var value = $('#descriptionNine').val(); 
     console.log(value)
@@ -78,6 +82,7 @@ $("#saveBtnFive").click(function() {
     localStorage.setItem('#descriptionFive', JSON.stringify(value));
 }); 
 
+//Functions that add the .present class if the current time is between the hour
 function current(){
     if (moment().isBetween(moment('09:00:00', time), moment('09:59:59', time))) {
         $("#descriptionNine").addClass("present")
@@ -108,6 +113,7 @@ function current(){
     }
 };
 
+//Functions that add the .future class to description elements beyond the current time
 function future(){
     if(moment().isBefore(moment('08:59:59', time))){
         $("#descriptionNine").addClass("future")
@@ -139,6 +145,7 @@ function future(){
 
 }
 
+//Functions that add the .past class to description elements before the current time
 function past(){
     if (moment().isAfter(moment('09:59:59', time))) {
         $("#descriptionNine").addClass("past")
