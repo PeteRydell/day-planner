@@ -1,6 +1,9 @@
 $("#currentDay").text(moment().format('LLLL'));
 
 var time = 'HH:mm:ss'
+var past = setInterval(past, 1000);
+var current = setInterval(current, 1000);
+var future = setInterval(future, 1000);
 
 var nineAM = JSON.parse(localStorage.getItem('#descriptionNine'));
 $("#descriptionNine").val(nineAM);
@@ -74,3 +77,94 @@ $("#saveBtnFive").click(function() {
     console.log(value)
     localStorage.setItem('#descriptionFive', JSON.stringify(value));
 }); 
+
+function current(){
+    if (moment().isBetween(moment('09:00:00', time), moment('09:59:59', time))) {
+        $("#descriptionNine").addClass("present")
+    }
+    if (moment().isBetween(moment('10:00:00', time), moment('10:59:59', time))) {
+        $("#descriptionTen").addClass("present")
+    }
+    if (moment().isBetween(moment('11:00:00', time), moment('11:59:59', time))) {
+        $("#descriptionEleven").addClass("present")
+    }
+    if (moment().isBetween(moment('12:00:00', time), moment('12:59:59', time))) {
+        $("#descriptionTwelve").addClass("present")
+    }
+    if (moment().isBetween(moment('13:00:00', time), moment('13:59:59', time))) {
+        $("#descriptionOne").addClass("present")
+    }
+    if (moment().isBetween(moment('14:00:00', time), moment('14:59:59', time))) {
+        $("#descriptionTwo").addClass("present")
+    }
+    if (moment().isBetween(moment('15:00:00', time), moment('15:59:59', time))) {
+        $("#descriptionThree").addClass("present")
+    }
+    if (moment().isBetween(moment('16:00:00', time), moment('16:59:59', time))) {
+        $("#descriptionFour").addClass("present")
+    }
+    if (moment().isBetween(moment('17:00:00', time), moment('17:59:59', time))) {
+        $("#descriptionFive").addClass("present")
+    }
+};
+
+function future(){
+    if(moment().isBefore(moment('08:59:59', time))){
+        $("#descriptionNine").addClass("future")
+    }
+    if(moment().isBefore(moment('09:59:59', time))){
+        $("#descriptionTen").addClass("future")
+    }
+    if(moment().isBefore(moment('10:59:59', time))){
+        $("#descriptionEleven").addClass("future")
+    }
+    if(moment().isBefore(moment('11:59:59', time))){
+        $("#descriptionTwelve").addClass("future")
+    }
+    if(moment().isBefore(moment('12:59:59', time))){
+        $("#descriptionOne").addClass("future")
+    }
+    if(moment().isBefore(moment('13:59:59', time))){
+        $("#descriptionTwo").addClass("future")
+    }
+    if(moment().isBefore(moment('14:59:59', time))){
+        $("#descriptionThree").addClass("future")
+    }
+    if(moment().isBefore(moment('15:59:59', time))){
+        $("#descriptionFour").addClass("future")
+    }
+    if(moment().isBefore(moment('16:59:59', time))){
+        $("#descriptionFive").addClass("future")
+    }
+
+}
+
+function past(){
+    if (moment().isAfter(moment('09:59:59', time))) {
+        $("#descriptionNine").addClass("past")
+    }
+    if (moment().isAfter(moment('10:59:59', time))) {
+        $("#descriptionTen").addClass("past")
+    }
+    if (moment().isAfter(moment('11:59:59', time))) {
+        $("#descriptionEleven").addClass("past")
+    }
+    if (moment().isAfter(moment('12:59:59', time))) {
+        $("#descriptionTwelve").addClass("past")
+    }
+    if (moment().isAfter(moment('13:59:59', time))) {
+        $("#descriptionOne").addClass("past")
+    }
+    if (moment().isAfter(moment('14:59:59', time))) {
+        $("#descriptionTwo").addClass("past")
+    }
+    if (moment().isAfter(moment('15:59:59', time))) {
+        $("#descriptionThree").addClass("past")
+    }
+    if (moment().isAfter(moment('16:59:59', time))) {
+        $("#descriptionFour").addClass("past")
+    }
+    if (moment().isAfter(moment('17:59:59', time))) {
+        $("#descriptionFive").addClass("past")
+    }
+};
