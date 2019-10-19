@@ -1,30 +1,25 @@
-var timeBlock = [
-    "9:00am",
-    "10:00am",
-    "11:00am",
-    "12:00pm",
-    "1:00pm",
-    "2:00pm",
-    "3:00pm",
-    "4:00pm",
-    "5:00pm"
-    ];
+$("#currentDay").text(moment().format('LLLL'));
 
-var input = description;
+var nineAM = JSON.parse(localStorage.getItem('#descriptionNine'));
+var tenAM = JSON.parse(localStorage.getItem('tenAM'));
+var elevenAM = JSON.parse(localStorage.getItem('elevenAM'));
+var twelvePM = JSON.parse(localStorage.getItem('twelvePM'));
+var onePM = JSON.parse(localStorage.getItem('onePM'));
+var twoPM = JSON.parse(localStorage.getItem('twoPM'));
+var threePM = JSON.parse(localStorage.getItem('threePM'));
+var fourPM = JSON.parse(localStorage.getItem('fourPM'));
+var fivePM = JSON.parse(localStorage.getItem('fivePM'));
+
+var nineAm = "";
+
+$("#saveBtnNine").click(function() { 
+    var nineAm = $('#descriptionNine').val(nineAm); 
+    console.log(nineAm)
+}); 
 
 
-//$(".container-1").html("9:00AM").attr({class: "hour"});
-//$(".container-1").html("<input/>").attr({class: "col-xl-8 time-block row hour", name:'time'});
 
 
 
 
-var calDiv = $(".container-1")
 
-for (var i = 0; i < timeBlock.length; i++) {
-
-    var newTimeBlock = $(timeBlock[i] + "</div>");
-    
-    calDiv.append(newTimeBlock);
-
-};

@@ -63,10 +63,8 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
-    height: 75px;
-    margin-bottom: 50px;
-    justify-content: center;
-    vertical-align:middle;
+    height: 80px;
+    width: 110px;
   }
   
   .saveBtn i:hover {
